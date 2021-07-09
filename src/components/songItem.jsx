@@ -4,7 +4,7 @@ import { deleteSong } from '../redux/musicSlice';
 import { useDispatch } from 'react-redux';
 import { generateStars } from './stars';
 
-const SongItem = ({ id, rating, title, artist, youtube }) => {
+const SongItem = ({ id, rating, title, artist, youtube, genre }) => {
 	const dispatch = useDispatch();
 
 	const handleDeleteSong = () => {
@@ -15,6 +15,7 @@ const SongItem = ({ id, rating, title, artist, youtube }) => {
 		<li className='songlistwrapper' id={id}>
 			<div className='title'>{title}</div>
 			<div className='artist'>{artist}</div>
+			<div className='genre'>{genre}</div>
 			<div className='rating'>{generateStars(rating)}</div>
 			<div className='youtube'>
 				{youtube ? (

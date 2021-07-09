@@ -15,6 +15,7 @@ const SongList = () => {
 					artist={song.artist}
 					rating={song.rating}
 					youtube={song.youtube}
+					genre={song.genre}
 				/>
 			))}
 		</ul>

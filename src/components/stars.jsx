@@ -5,7 +5,7 @@ export const generateStars = (nr) => {
 	let icons = [];
 
 	for (let num = 0; num < nr; num++) {
-		icons = [...icons, <FaStar key={num}/>];
+		icons = [...icons, <FaStar key={num} />];
 	}
 
 	return icons;

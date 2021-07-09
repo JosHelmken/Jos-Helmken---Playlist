@@ -5,11 +5,13 @@ import { addSong } from '../redux/musicSlice';
 const AddSongForm = () => {
 	const dispatch = useDispatch();
 	const ratings = [1, 2, 3, 4, 5];
+	const genres = ['pop', 'dance', 'new age', 'rock', 'jazz', 'indie', 'other'];
 
 	const [formData, setFormData] = useState({
 		title: '',
 		artist: '',
-		rating: 0,
+		genre: '',
+		rating: '',
 		youtube: '',
 	});
 
@@ -23,7 +25,8 @@ const AddSongForm = () => {
 		setFormData({
 			title: '',
 			artist: '',
-			rating: 0,
+			genre: '',
+			rating: '',
 			youtube: '',
 		});
 	};
@@ -47,17 +50,35 @@ const AddSongForm = () => {
 				onChange={handleChance}
 				required></input>
 			<select
+				name='genre'
+				className='form-select'
+				onChange={handleChance}
+				value={formData.genre}
+				required>
+				<option disabled value=''>
+					Select genre
+				</option>
+				{genres.map((genre) => {
+					return (
+						<option value={genre} key={genre}>
+							{genre}
+						</option>
+					);
+				})}
+			</select>
+			<select
 				name='rating'
 				className='form-select'
 				onChange={handleChance}
+				value={formData.rating}
 				required>
-				<option disabled hidden value={formData.rating}>
+				<option disabled value=''>
 					Select Rating
 				</option>
 				{ratings.map((rate) => {
 					return (
 						<option value={rate} key={rate}>
-							{rate} star
+							{rate}
 						</option>
 					);
 				})}
