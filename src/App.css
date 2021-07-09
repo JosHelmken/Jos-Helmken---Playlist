@@ -8,12 +8,16 @@ form {
 	margin-bottom: 60px;
 }
 
-input {
+input,
+select {
 	padding: 10px 20px;
 	border: 1px solid #141414;
 	margin-right: 10px;
 	outline: none;
 	border-radius: 2px;
+}
+option {
+	font-size: 16px;
 }
 .form-submit-btn {
 	padding: 11px 30px;
@@ -34,7 +38,7 @@ ul {
 
 .songlistwrapper {
 	display: grid;
-	grid-template-columns: 0.5fr 3.5fr 3fr repeat(2, 0.5fr);
+	grid-template-columns: 0.5fr 2fr 3fr repeat(2, 0.5fr);
 	grid-template-rows: 1fr;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
@@ -45,7 +49,7 @@ ul {
 	line-height: 22px;
 	opacity: 70%;
 	transition: opacity 300ms ease-in-out;
-  align-items: center;
+	align-items: center;
 }
 .songlistwrapper:hover {
 	opacity: 100%;
@@ -54,7 +58,7 @@ ul {
 .position {
 	grid-area: 1 / 1 / 2 / 2;
 	padding-left: 20px;
-  font-weight: 900;
+	font-weight: 900;
 }
 .title {
 	grid-area: 1 / 2 / 2 / 3;
@@ -66,10 +70,10 @@ ul {
 	grid-area: 1 / 4 / 2 / 5;
 }
 .youtube-btn {
-color: #ff0000;
-text-decoration: none;
-font-size: 30px;
-display: inline;
+	color: #ff0000;
+	text-decoration: none;
+	font-size: 30px;
+	display: inline;
 }
 .delete {
 	grid-area: 1 / 5 / 2 / 6;

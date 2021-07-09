@@ -3,23 +3,29 @@ import { useDispatch } from 'react-redux';
 import { addSong } from '../redux/musicSlice';
 
 const AddSongForm = () => {
-	const [title, setTitle] = useState('');
-	const [artist, setArtist] = useState('');
-	const [position, setPosition] = useState('');
-	const [youtube, setYoutube] = useState('');
-
 	const dispatch = useDispatch();
+	const ratings = [1, 2, 3, 4, 5];
+
+	const [formData, setFormData] = useState({
+		title: '',
+		artist: '',
+		rating: 0,
+		youtube: '',
+	});
+
+	const handleChance = ({ target }) => {
+		setFormData({ ...formData, [target.name]: target.value });
+	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
-		dispatch(
-			addSong({
-				title,
-				artist,
-				position,
-				youtube,
-			})
-		);
+		dispatch(addSong(formData));
+		setFormData({
+			title: '',
+			artist: '',
+			rating: 0,
+			youtube: '',
+		});
 	};
 
 	return (
@@ -29,34 +35,40 @@ const AddSongForm = () => {
 				className='form-input'
 				placeholder='Song Title'
 				name='title'
-				value={title}
-				onChange={(event) => setTitle(event.target.value)}
+				value={formData.title}
+				onChange={handleChance}
 				required></input>
 			<input
 				type='text'
 				className='form-input'
 				placeholder='Song Artist'
 				name='artist'
-				value={artist}
-				onChange={(event) => setArtist(event.target.value)}
+				value={formData.artist}
+				onChange={handleChance}
 				required></input>
-			<input
-				type='number'
-				className='form-input'
-				placeholder='Song position'
-				name='position'
-				value={position}
-				onChange={(event) => setPosition(event.target.value)}
-				min='1'
-				max='20'
-				required></input>
+			<select
+				name='rating'
+				className='form-select'
+				onChange={handleChance}
+				required>
+				<option selected disabled hidden>
+					Select Rating
+				</option>
+				{ratings.map((rate) => {
+					return (
+						<option value={rate} key={rate}>
+							{rate} star
+						</option>
+					);
+				})}
+			</select>
 			<input
 				type='text'
 				className='form-input'
 				placeholder='Song youtube (optional)'
 				name='youtube'
-				value={youtube}
-				onChange={(event) => setYoutube(event.target.value)}></input>
+				value={formData.youtube}
+				onChange={handleChance}></input>
 			<button type='submit' className='form-submit-btn'>
 				Add Song
 			</button>

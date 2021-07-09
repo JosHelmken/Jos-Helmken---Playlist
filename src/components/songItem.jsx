@@ -3,23 +3,23 @@ import { FaYoutube, FaTrashAlt } from 'react-icons/fa';
 import { deleteSong } from '../redux/musicSlice';
 import { useDispatch } from 'react-redux';
 
-const SongItem = (song) => {
+const SongItem = ({id, rating, title, artist, youtube}) => {
 	const dispatch = useDispatch();
 
 	const handleDeleteSong = () => {
-		let id = song.id;
-		dispatch(deleteSong({id: id}));
+		dispatch(deleteSong({id}));
 	};
 
+
 	return (
-		<li className='songlistwrapper' id={song.id}>
-			<div className='position'>{song.position}</div>
-			<div className='title'>{song.title}</div>
-			<div className='artist'>{song.artist}</div>
+		<li className='songlistwrapper' id={id}>
+			<div className='position'>{rating}</div>
+			<div className='title'>{title}</div>
+			<div className='artist'>{artist}</div>
 			<div className='youtube'>
-				<a href={song.youtube} target='_blank' className='youtube-btn'>
+        {youtube ? <a href={youtube} target='_blank' className='youtube-btn'> 
 					<FaYoutube />
-				</a>
+				</a> : ''}
 			</div>
 			<div className='delete'>
 				<FaTrashAlt onClick={handleDeleteSong} />

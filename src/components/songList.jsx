@@ -13,7 +13,7 @@ const SongList = () => {
 					id={song.id}
 					title={song.title}
 					artist={song.artist}
-					position={song.position}
+					rating={song.rating}
 					youtube={song.youtube}
 				/>
 			))}

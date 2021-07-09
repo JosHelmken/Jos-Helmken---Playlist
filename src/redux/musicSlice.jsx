@@ -7,21 +7,21 @@ const musicSlice = createSlice({
 			id: 1625837262826,
 			title: 'Good 4 U',
 			artist: 'Olivia Rodrigo',
-			position: 1,
+			rating: 1,
 			youtube: 'https://www.youtube.com/embed/gNi_6U5Pm_o',
 		},
 		{
 			id: 1625837462323,
 			title: 'We are the People',
 			artist: 'Marting Garrix feat Bono & the Edge',
-			position: 2,
+			rating: 2,
 			youtube: 'https://www.youtube.com/embed/kGT73GcwhCU',
 		},
 		{
 			id: 1627837462827,
 			title: 'Afraid of the Dark',
 			artist: 'Chef`s Special',
-			position: 3,
+			rating: 3,
 			youtube: 'https://www.youtube.com/embed/TP7CPfj-N98',
 		},
 	],
@@ -31,7 +31,7 @@ const musicSlice = createSlice({
 				id: Date.now(),
 				title: action.payload.title,
 				artist: action.payload.artist,
-				position: action.payload.position,
+				position: action.payload.rating,
 				youtube: action.payload.youtube,
 			};
 			state.push(newSong);
