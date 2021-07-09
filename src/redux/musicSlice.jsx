@@ -4,21 +4,21 @@ const musicSlice = createSlice({
 	name: 'musicList',
 	initialState: [
 		{
-			id: 1,
+			id: 1625837262826,
 			title: 'Good 4 U',
 			artist: 'Olivia Rodrigo',
 			position: 1,
 			youtube: 'https://www.youtube.com/embed/gNi_6U5Pm_o',
 		},
 		{
-			id: 2,
+			id: 1625837462323,
 			title: 'We are the People',
 			artist: 'Marting Garrix feat Bono & the Edge',
 			position: 2,
 			youtube: 'https://www.youtube.com/embed/kGT73GcwhCU',
 		},
 		{
-			id: 3,
+			id: 1627837462827,
 			title: 'Afraid of the Dark',
 			artist: 'Chef`s Special',
 			position: 3,
@@ -37,8 +37,7 @@ const musicSlice = createSlice({
 			state.push(newSong);
 		},
 		deleteSong: (state, action) => {
-			console.log(state.filter((song) => song.id !== action.payload.id));
-			//return state.filter((song) => song.position !== action.payload.position);
+			return state.filter((song) => song.id !== action.payload.id);
 		},
 	},
 });

@@ -7,11 +7,12 @@ const SongItem = (song) => {
 	const dispatch = useDispatch();
 
 	const handleDeleteSong = () => {
-		dispatch(deleteSong({ id: id }));
+		let id = song.id;
+		dispatch(deleteSong({id: id}));
 	};
 
 	return (
-		<li className='songlistwrapper' id={song.position}>
+		<li className='songlistwrapper' id={song.id}>
 			<div className='position'>{song.position}</div>
 			<div className='title'>{song.title}</div>
 			<div className='artist'>{song.artist}</div>
@@ -20,7 +21,7 @@ const SongItem = (song) => {
 					<FaYoutube />
 				</a>
 			</div>
-			<div className='delete' id={song.position}>
+			<div className='delete'>
 				<FaTrashAlt onClick={handleDeleteSong} />
 			</div>
 		</li>

@@ -5,8 +5,6 @@ import { useSelector } from 'react-redux';
 const SongList = () => {
 	const songs = useSelector((state) => state.musicList);
 
-	console.log('Songlist:', songs);
-
 	return (
 		<ul>
 			{songs.map((song) => (
