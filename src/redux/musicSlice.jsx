@@ -31,7 +31,7 @@ const musicSlice = createSlice({
 				id: Date.now(),
 				title: action.payload.title,
 				artist: action.payload.artist,
-				position: action.payload.rating,
+				rating: action.payload.rating,
 				youtube: action.payload.youtube,
 			};
 			state.push(newSong);

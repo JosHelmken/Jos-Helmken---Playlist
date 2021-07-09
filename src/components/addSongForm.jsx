@@ -51,7 +51,7 @@ const AddSongForm = () => {
 				className='form-select'
 				onChange={handleChance}
 				required>
-				<option selected disabled hidden>
+				<option disabled hidden value={formData.rating}>
 					Select Rating
 				</option>
 				{ratings.map((rate) => {
