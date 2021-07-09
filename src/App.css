@@ -1,0 +1,76 @@
+.App {
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form {
+	margin-bottom: 60px;
+}
+
+input {
+	padding: 10px 20px;
+	border: 1px solid #141414;
+	margin-right: 10px;
+	outline: none;
+	border-radius: 2px;
+}
+.form-submit-btn {
+	padding: 11px 30px;
+	border: none;
+	border-radius: 2px;
+	background: #141414;
+	color: white;
+	transition: opacity 250ms ease;
+}
+.form-submit-btn:hover {
+	opacity: 0.8;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.songlistwrapper {
+	display: grid;
+	grid-template-columns: 0.5fr 3.5fr 3fr repeat(2, 0.5fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	padding: 10px 0;
+	background: #e2e2e2;
+	margin-bottom: 2px;
+	font-size: 20px;
+	line-height: 22px;
+	opacity: 70%;
+	transition: opacity 300ms ease-in-out;
+  align-items: center;
+}
+.songlistwrapper:hover {
+	opacity: 100%;
+}
+
+.position {
+	grid-area: 1 / 1 / 2 / 2;
+	padding-left: 20px;
+  font-weight: 900;
+}
+.title {
+	grid-area: 1 / 2 / 2 / 3;
+}
+.artist {
+	grid-area: 1 / 3 / 2 / 4;
+}
+.youtube {
+	grid-area: 1 / 4 / 2 / 5;
+}
+.youtube-btn {
+color: #ff0000;
+text-decoration: none;
+font-size: 30px;
+display: inline;
+}
+.delete {
+	grid-area: 1 / 5 / 2 / 6;
+}
